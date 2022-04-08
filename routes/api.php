@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\DiseaseController;
+use App\Http\Controllers\API\SympthonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//disease API
+Route::post('disease',[DiseaseController::class,'add']);
+Route::get('disease',[DiseaseController::class,'all']);
+//sympthon API
+Route::post('sympthon',[SympthonController::class,'add']);
+Route::get('sympthon',[SympthonController::class,'all']);
+
+
