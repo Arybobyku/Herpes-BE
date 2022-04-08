@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Diseases', function (Blueprint $table) {
+        Schema::create('solutionpivot', function (Blueprint $table) {
             $table->id();
-            $table->string('disease_name');
+            $table->bigInteger('casepivot_id');
+            $table->bigInteger('solution_id');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Diseases');
+        Schema::dropIfExists('solutionpivot');
     }
 };

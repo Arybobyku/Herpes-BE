@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('solutions', function (Blueprint $table) {
             $table->id();
+            $table->string('solution_name');
+            $table->bigInteger('casepivot_id');
             $table->timestamps();
         });
     }

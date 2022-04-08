@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('disease_id');
+            $table->string('case_name');
             $table->timestamps();
         });
     }

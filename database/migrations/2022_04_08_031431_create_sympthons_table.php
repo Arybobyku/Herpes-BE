@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('sympthons', function (Blueprint $table) {
             $table->id();
+            $table->string('sympthon_name');
             $table->timestamps();
         });
     }
