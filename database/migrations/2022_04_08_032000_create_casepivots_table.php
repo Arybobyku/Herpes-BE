@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('casepivots', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('case_id');
+            $table->integer('weight');
             $table->bigInteger('sympthon_id');
             $table->timestamps();
         });

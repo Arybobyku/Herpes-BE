@@ -15,7 +15,10 @@ class CaseModel extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'case_name',
+        'disease_id',
+        'confidence_level',
+        'age',
+        'gender',
     ];
 
     public function disease(){

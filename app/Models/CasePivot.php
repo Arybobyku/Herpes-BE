@@ -15,6 +15,9 @@ class CasePivot extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'case_id',
+        'weight',
+        'sympthon_id'
     ];
 
     public function cases(){

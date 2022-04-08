@@ -9,8 +9,8 @@ class SolutionPivot extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'solution_name',
         'casepivot_id',
-        'solution_id',
     ];
 
     public function sympthons(){

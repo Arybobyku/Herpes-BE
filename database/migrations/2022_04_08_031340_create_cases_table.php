@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('disease_id');
-            $table->string('case_name');
+            $table->integer('confidence_level');
+            $table->integer('age');
+            $table->string('gender');
             $table->timestamps();
         });
     }
