@@ -16,4 +16,7 @@ class SolutionPivot extends Model
     public function sympthons(){
         return $this->belongsToMany(CasePivot::class,'casepivot_id','id');
     }
+    public function solutions(){
+        return $this->belongsToMany(Solution::class,'solution_id','id');
+    }
 }

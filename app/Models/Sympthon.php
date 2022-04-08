@@ -18,9 +18,4 @@ class Sympthon extends Model
         'sympthon_name',
     ];
 
-
-    public function casePivots(){
-        return $this->hasMany(CasePivot::class,'sympthon_id','id');
-    }
-
 }

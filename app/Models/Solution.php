@@ -17,8 +17,4 @@ class Solution extends Model
     protected $fillable = [
         'solution_name',
     ];
-
-    public function casePivots(){
-        return $this->hasMany(CaseModel::class,'id','casepivot_id');
-    }
 }

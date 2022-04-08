@@ -18,10 +18,6 @@ class CaseModel extends Model
         'case_name',
     ];
 
-    public function casePivots(){
-        return $this->hasMany(CasePivot::class,'case_id','id');
-    }
-
     public function disease(){
         return $this->hasOne(Disease::class,'id','disease_id');
     }
