@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\CaseController;
 use App\Http\Controllers\API\DiseaseController;
 use App\Http\Controllers\API\SympthonController;
 use Illuminate\Http\Request;
@@ -26,5 +27,8 @@ Route::get('disease',[DiseaseController::class,'all']);
 //sympthon API
 Route::post('sympthon',[SympthonController::class,'add']);
 Route::get('sympthon',[SympthonController::class,'all']);
+//case API
+Route::post('case',[CaseController::class,'add']);
+Route::get('case',[CaseController::class,'all']);
 
 
