@@ -72,14 +72,14 @@ class CaseController extends Controller
         $case_id = $request->input('case_id');
 
         if($case_id){
-            $cases = CaseHerpes::where('id',$request->case_id)->with(['casesPivots.sympthons','disease'])->first();
+            $cases = CaseHerpes::where('id',$request->case_id)->with(['casesPivots.sympthons','disease','solutions'])->first();
             if($cases){
                 return ResponseFormatter::success($cases,"Success get disease");
             }else{
                 return ResponseFormatter::error(null,"id not found");
             }
         }
-        $cases = CaseHerpes::with(['casesPivots.sympthons','disease'])->get();
+        $cases = CaseHerpes::with(['casesPivots.sympthons','disease','solutions'])->get();
 
         return ResponseFormatter::success(
             $cases,"success get diseases"
