@@ -43,7 +43,6 @@ class CaseController extends Controller
             'sympthon_id'=>$request->sympthon_id,
             'weight'=>$request->weight,
         ]);
-
         return ResponseFormatter::success(
             $casePivot,
             "Success post pivot disease"
@@ -65,6 +64,26 @@ class CaseController extends Controller
         $case = CaseHerpes::with(['disease'])->get();
 
         return ResponseFormatter::success($case,"success get diseases");
+
+    }
+
+    public function allCasePivot(Request $request){
+
+        $case_id = $request->input('case_id');
+
+        if($case_id){
+            $cases = CaseHerpes::where('id',$request->case_id)->with(['casesPivots.sympthons','disease'])->first();
+            if($cases){
+                return ResponseFormatter::success($cases,"Success get disease");
+            }else{
+                return ResponseFormatter::error(null,"id not found");
+            }
+        }
+        $cases = CaseHerpes::with(['casesPivots.sympthons','disease'])->get();
+
+        return ResponseFormatter::success(
+            $cases,"success get diseases"
+        );
 
     }
 }
