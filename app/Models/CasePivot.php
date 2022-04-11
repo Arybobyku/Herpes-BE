@@ -21,7 +21,7 @@ class CasePivot extends Model
     ];
 
     public function cases(){
-        return $this->belongsToMany(CaseModel::class,'case_id','id');
+        return $this->belongsToMany(CaseHerpes::class,'case_id','id');
     }
     
     public function sympthons(){

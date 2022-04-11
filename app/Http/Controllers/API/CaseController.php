@@ -6,6 +6,7 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\CaseHerpes;
 use App\Models\CaseModel;
+use App\Models\CasePivot;
 use Illuminate\Http\Request;
 
 class CaseController extends Controller
@@ -28,6 +29,24 @@ class CaseController extends Controller
         return ResponseFormatter::success(
             $case,
             "Success post disease"
+        );
+    }
+
+    public function addCasePivot(Request $request){
+        $request->validate([
+            'case_id'=>'exists:case_herpes,id',
+            'sympthon_id'=>'exists:sympthons,id',
+            'weight' => 'required',
+        ]);
+        $casePivot =  CasePivot::create([
+            'case_id'=>$request->case_id,
+            'sympthon_id'=>$request->sympthon_id,
+            'weight'=>$request->weight,
+        ]);
+
+        return ResponseFormatter::success(
+            $casePivot,
+            "Success post pivot disease"
         );
     }
 
