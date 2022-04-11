@@ -16,7 +16,7 @@ class SolutionPivot extends Model
     public function cases(){
         return $this->hasMany(CaseHerpes::class,'id','case_id');
     }
-    public function solutions(){
-        return $this->belongsToMany(Solution::class,'solution_id','id');
+    public function solution(){
+        return $this->hasMany(Solution::class,'id','solution_id');
     }
 }
