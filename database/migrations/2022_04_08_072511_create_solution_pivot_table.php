@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('casepivots', function (Blueprint $table) {
+        Schema::create('solution_pivot', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('case_id');
-            $table->integer('weight');
-            $table->bigInteger('sympthon_id');
+            $table->bigInteger('casepivot_id');
+            $table->bigInteger('solution_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('casepivots');
+        Schema::dropIfExists('solution_pivot');
     }
 };
