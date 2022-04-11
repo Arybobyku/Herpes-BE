@@ -36,6 +36,8 @@ Route::post('casePivot',[CaseController::class,'addCasePivot']);
 Route::get('casePivot',[CaseController::class,'allCasePivot']);
 //solution
 Route::post('solution',[SolutionController::class,'add']);
-Route::get('solution',[SympthonController::class,'all']);
+Route::get('solution',[SolutionController::class,'all']);
+Route::post('solutionPivot',[SolutionController::class,'addSolutionPivot']);
+Route::get('solutionPivot',[SolutionController::class,'allSolutionPivot']);
 
 
