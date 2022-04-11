@@ -17,4 +17,8 @@ class Solution extends Model
     protected $fillable = [
         'solution_name',
     ];
+
+    public function solutionPivots(){
+        return $this->hasMany(SolutionPivot::class,'solution_id','id');
+    }
 }

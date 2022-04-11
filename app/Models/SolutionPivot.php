@@ -9,14 +9,14 @@ class SolutionPivot extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'solution_name',
-        'casepivot_id',
+        'solution_id',
+        'case_id',
     ];
 
-    public function sympthons(){
-        return $this->belongsToMany(CasePivot::class,'casepivot_id','id');
+    public function cases(){
+        return $this->hasMany(CaseHerpes::class,'id','case_id');
     }
-    public function solutions(){
-        return $this->belongsToMany(Solution::class,'solution_id','id');
+    public function solution(){
+        return $this->hasMany(Solution::class,'id','solution_id');
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\CaseController;
 use App\Http\Controllers\API\DiseaseController;
+use App\Http\Controllers\API\SolutionController;
 use App\Http\Controllers\API\SympthonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,5 +34,10 @@ Route::get('case',[CaseController::class,'all']);
 //case pivot
 Route::post('casePivot',[CaseController::class,'addCasePivot']);
 Route::get('casePivot',[CaseController::class,'allCasePivot']);
+//solution
+Route::post('solution',[SolutionController::class,'add']);
+Route::get('solution',[SolutionController::class,'all']);
+Route::post('solutionPivot',[SolutionController::class,'addSolutionPivot']);
+Route::get('solutionPivot',[SolutionController::class,'allSolutionPivot']);
 
 

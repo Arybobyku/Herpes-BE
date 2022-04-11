@@ -23,4 +23,8 @@ class CaseHerpes extends Model
     public function casesPivots(){
         return $this->hasMany(CasePivot::class,'case_id','id');
     }
+
+    public function solutions(){
+        return $this->hasMany(SolutionPivot::class,'case_id','id');
+    }
 }
