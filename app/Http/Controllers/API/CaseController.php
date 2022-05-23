@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\CaseHerpes;
-use App\Models\CaseModel;
 use App\Models\CasePivot;
 use Illuminate\Http\Request;
 
@@ -63,7 +62,7 @@ class CaseController extends Controller
 
         $case = CaseHerpes::with(['disease'])->get();
 
-        return ResponseFormatter::success($case,"success get diseases");
+        return ResponseFormatter::success($case,"success get cases");
 
     }
 
@@ -82,7 +81,7 @@ class CaseController extends Controller
         $cases = CaseHerpes::with(['casesPivots.sympthons','disease','solutions.solution'])->get();
 
         return ResponseFormatter::success(
-            $cases,"success get diseases"
+            $cases,"success get cases"
         );
 
     }

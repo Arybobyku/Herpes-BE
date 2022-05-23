@@ -14,8 +14,14 @@ class DiseaseController extends Controller
             'name'=>['required','string','max:255'],
         ]);
 
+    $image = $request->file('image')->store('images');
+    $file = $request->file('image') ;
+    $destinationPath = public_path().'/images' ;
+    $file->move($destinationPath,$image);
+
        $disease =  Disease::create([
             'disease_name'=>$request->name,
+            'image'=>$image
         ]);
         return ResponseFormatter::success(
             $disease,

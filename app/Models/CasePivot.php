@@ -26,6 +26,6 @@ class CasePivot extends Model
 
 
     public function sympthons(){
-        return $this->hasMany(Sympthon::class,'id','sympthon_id');
+        return $this->hasOne(Sympthon::class,'id','sympthon_id');
     }
 }
